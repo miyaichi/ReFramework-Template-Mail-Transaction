@@ -127,7 +127,7 @@
                                   <OutArgument x:TypeArguments="ss:SecureString" x:Key="out_Password">[Password]</OutArgument>
                                 </ui:InvokeWorkflowFile.Arguments>
                               </ui:InvokeWorkflowFile>
-                              <ui:MoveIMAPMailMessageToFolder FromFolder="{x:Null}" DisplayName="Move IMAP Mail Message" Email="[Username]" EnableSSL="True" sap2010:WorkflowViewState.IdRef="MoveIMAPMailMessageToFolder_1" MailFolder="[in_Config(&quot;Mail_Archive_Folder&quot;).ToString]" MailMessage="[in_TransactionItem]" Password="[new System.Net.NetworkCredential(String.Empty, Password).Password]" Port="[CINT(in_Config(&quot;IMAP_Port&quot;))]" SecureConnection="Auto" Server="[in_Config(&quot;IMAP_Server&quot;).ToString]" />
+                              <ui:MoveIMAPMailMessageToFolder DisplayName="Move IMAP Mail Message" Email="[Username]" EnableSSL="True" FromFolder="[in_Config(&quot;Mail_Folder&quot;).ToString]" sap2010:WorkflowViewState.IdRef="MoveIMAPMailMessageToFolder_1" MailFolder="[in_Config(&quot;Mail_Archive_Folder&quot;).ToString]" MailMessage="[in_TransactionItem]" Password="[new System.Net.NetworkCredential(String.Empty, Password).Password]" Port="[CINT(in_Config(&quot;IMAP_Port&quot;))]" SecureConnection="Auto" Server="[in_Config(&quot;IMAP_Server&quot;).ToString]" />
                             </Sequence>
                           </FlowStep>
                         </FlowDecision.True>
@@ -190,7 +190,7 @@
     <x:Reference>__ReferenceID5</x:Reference>
     <x:Reference>__ReferenceID6</x:Reference>
     <x:Reference>__ReferenceID0</x:Reference>
-    <sads:DebugSymbol.Symbol>d19DOlxVc2Vyc1xZb3NoaWhpa28gTWl5YWljaGlcRG9jdW1lbnRzXFVpUGF0aFxSZUZyYW1ld29yay1UZW1wbGF0ZS1NYWlsLVRyYW5zYWN0aW9uXFByb2Nlc3MueGFtbDFMA8IBDwIBAVMLUzoCAQJaCVqNAQIBTV0NcBgCAURyP3JKAgFCiAEdqgEoAgEcdRV1kQECARt3R3dSAgEZeh2DASgCAQNeD2UYAgFJZg9vGAIBRY0BH5MBNwIBOpQBH5sBKAIBNZwBH5wB5AECATCdAR+kASgCASylAR+pAS0CAR17H4EBNwIBEYIBH4IBlAQCAQRjO2M/AgFMYDxgRQIBSmwVbEQCAUhoO2hFAgFGkQFnkQFxAgFAkAFgkAGHAQIBPo8BYI8BagIBPI0B2AGNAfoBAgE7mQFKmQFvAgE4lgFLlgFZAgE2nAFznAGwAQIBM5wBOJwBSAIBMaIBSqIB6AICAS+fAUufAVYCAS2lAZsEpQG+BAIBKqUBmgGlAacBAgEopQGHBKUBlwQCASalAdMBpQHfAQIBJKUBhQOlAa8DAgEipQHPA6UB/gMCASClAboCpQH/AgIBHn9nf3ECARd+YH6HAQIBFX1gfWoCARN72AF7+gECARKCAYABggGMAQIBD4IBmAOCAcIDAgENggHiA4IBkQQCAQuCAc0CggGSAwIBCYIBrQKCAcMCAgEHggHpAYIBoAICAQU=</sads:DebugSymbol.Symbol>
+    <sads:DebugSymbol.Symbol>d19DOlxVc2Vyc1xZb3NoaWhpa28gTWl5YWljaGlcRG9jdW1lbnRzXFVpUGF0aFxSZUZyYW1ld29yay1UZW1wbGF0ZS1NYWlsLVRyYW5zYWN0aW9uXFByb2Nlc3MueGFtbDJMA8IBDwIBAVMLUzoCAQJaCVqNAQIBT10NcBgCAUZyP3JKAgFEiAEdqgEoAgEedRV1kQECAR13R3dSAgEbeh2DASgCAQNeD2UYAgFLZg9vGAIBR40BH5MBNwIBPJQBH5sBKAIBN5wBH5wB5AECATKdAR+kASgCAS6lAR+pAS0CAR97H4EBNwIBE4IBH4IBuQQCAQRjO2M/AgFOYDxgRQIBTGwVbEQCAUpoO2hFAgFIkQFnkQFxAgFCkAFgkAGHAQIBQI8BYI8BagIBPo0B2AGNAfoBAgE9mQFKmQFvAgE6lgFLlgFZAgE4nAFznAGwAQIBNZwBOJwBSAIBM6IBSqIB6AICATGfAUufAVYCAS+lAZsEpQG+BAIBLKUBmgGlAacBAgEqpQGHBKUBlwQCASilAdMBpQHfAQIBJqUBhQOlAa8DAgEkpQHPA6UB/gMCASKlAboCpQH/AgIBIH9nf3ECARl+YH6HAQIBF31gfWoCARV72AF7+gECARSCAWqCAXYCARGCAZMBggHCAQIBD4IBvQOCAecDAgENggGHBIIBtgQCAQuCAfICggG3AwIBCYIB0gKCAegCAgEHggGOAoIBxQICAQU=</sads:DebugSymbol.Symbol>
   </Flowchart>
   <sap2010:WorkflowViewState.ViewStateManager>
     <sap2010:ViewStateManager>
@@ -222,7 +222,7 @@
       </sap2010:ViewStateData>
       <sap2010:ViewStateData Id="InvokeWorkflowFile_1" sap:VirtualizedContainerService.HintSize="314,87" />
       <sap2010:ViewStateData Id="MoveIMAPMailMessageToFolder_1" sap:VirtualizedContainerService.HintSize="314,87" />
-      <sap2010:ViewStateData Id="Sequence_4" sap:VirtualizedContainerService.HintSize="200,96">
+      <sap2010:ViewStateData Id="Sequence_4" sap:VirtualizedContainerService.HintSize="336,366">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -243,7 +243,7 @@
       <sap2010:ViewStateData Id="ReadTextFile_1" sap:VirtualizedContainerService.HintSize="317.5,59" />
       <sap2010:ViewStateData Id="Assign_3" sap:VirtualizedContainerService.HintSize="317.5,60" />
       <sap2010:ViewStateData Id="SendMail_1" sap:VirtualizedContainerService.HintSize="317.5,147" />
-      <sap2010:ViewStateData Id="Sequence_5" sap:VirtualizedContainerService.HintSize="339.5,725">
+      <sap2010:ViewStateData Id="Sequence_5" sap:VirtualizedContainerService.HintSize="200,96">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
