@@ -43,7 +43,7 @@ Constantsタブ
 
 2. project.jsonの"name","description"を修正します。
 
-3. Data¥Config.xslxにIMAPの情報、SMTPの情報、メールの情報を設定します。
+3. Data¥Config.xslxにIMAPの情報、SMTPの情報、メールの情報を設定します。また、IMAP、SMTPのクレデンシャル情報は、OrchestratorのCredentialに登録するか、Windows資格情報に登録します。
 
 4. Process.xamlを実装します。
 
