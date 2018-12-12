@@ -77,7 +77,6 @@
       <AssemblyReference>UiPath.System.Activities</AssemblyReference>
       <AssemblyReference>UiPath.Excel</AssemblyReference>
       <AssemblyReference>UiPath.Mail</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
       <AssemblyReference>System.ValueTuple</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
@@ -97,7 +96,7 @@
               <OutArgument x:TypeArguments="ss:SecureString" x:Key="out_Password">[Password]</OutArgument>
             </ui:InvokeWorkflowFile.Arguments>
           </ui:InvokeWorkflowFile>
-          <ui:BuildDataTable DataTable="[io_TransactionData]" DisplayName="Build Data Table" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xD;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xD;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xD;&#xA;      &lt;xs:complexType&gt;&#xD;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xD;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xD;&#xA;            &lt;xs:complexType&gt;&#xD;&#xA;              &lt;xs:sequence&gt;&#xD;&#xA;                &lt;xs:element name=&quot;TransactionID&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;MailDate&quot; type=&quot;xs:dateTime&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;MailMessage&quot; msdata:DataType=&quot;System.Net.Mail.MailMessage, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089&quot; type=&quot;xs:anyType&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;              &lt;/xs:sequence&gt;&#xD;&#xA;            &lt;/xs:complexType&gt;&#xD;&#xA;          &lt;/xs:element&gt;&#xD;&#xA;        &lt;/xs:choice&gt;&#xD;&#xA;      &lt;/xs:complexType&gt;&#xD;&#xA;    &lt;/xs:element&gt;&#xD;&#xA;  &lt;/xs:schema&gt;&#xD;&#xA;&lt;/NewDataSet&gt;" />
+          <ui:BuildDataTable DataTable="[io_TransactionData]" DisplayName="Build Data Table" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;TransactionID&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;MailDate&quot; type=&quot;xs:dateTime&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;MailMessage&quot; msdata:DataType=&quot;System.Net.Mail.MailMessage, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089&quot; type=&quot;xs:anyType&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;" />
           <ui:GetIMAPMailMessages TimeoutMS="{x:Null}" DeleteMessages="False" DisplayName="Get IMAP Mail Messages" Email="[Username]" EnableSSL="True" sap2010:WorkflowViewState.IdRef="GetIMAPMailMessages_1" MailFolder="[in_Config(&quot;Mail_Folder&quot;).ToString]" MarkAsRead="False" Messages="[Messages]" OnlyUnreadMessages="True" Password="[new System.Net.NetworkCredential(String.Empty, Password).Password]" Port="[CINT(in_Config(&quot;IMAP_Port&quot;))]" SecureConnection="Auto" Server="[in_Config(&quot;IMAP_Server&quot;).ToString]" Top="[CInt(in_Config(&quot;IMAP_Top&quot;))]" />
           <ui:ForEach x:TypeArguments="snm:MailMessage" CurrentIndex="{x:Null}" DisplayName="For Each" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[Messages]">
             <ui:ForEach.Body>
@@ -176,7 +175,7 @@
         </Sequence>
       </If.Then>
     </If>
-    <sads:DebugSymbol.Symbol>d3RDOlxVc2Vyc1xZb3NoaWhpa28gTWl5YWljaGlcRG9jdW1lbnRzXFVpUGF0aFxSZUZyYW1ld29yay1UZW1wbGF0ZS1NYWlsLVRyYW5zYWN0aW9uXEZyYW1ld29ya1xHZXRUcmFuc2FjdGlvbkRhdGEueGFtbDRUA7QBDgIBAVUFfgoCARx/BZQBCgIBEpUBBbIBCgIBAlUTVS8CAR1XCXwUAgEffxN/TwIBE4EBCYgBEgIBGIsBCZIBEgIBFJUBE5UBOAIBA5cBCbABFAIBBV0LYyMCAUVkC2ThDAIBQmULZcwEAgEzZgt7GAIBIIYBO4YBoQECARuDATyDAVECARmQATuQAUQCAReNATyNAVECARWYAQufARQCAQ6gAQunARQCAQqoAQuvARQCAQZhU2FdAgFLYExgcwIBSV9MX1YCAUddxAFd5gECAUZkKGQ+AgFDZaAEZckEAgFAZXplhgECAT5logNlzAMCATxlpwJlswICATpl7ANlmwQCAThl1wJlnAMCATZl2wFligICATRmnQFmqQECATFsEXgcAgEhnQE2nQFEAgERmgE3mgFKAgEPpQE2pQFEAgENogE3ogFOAgELrQE2rQFEAgEJqgE3qgFOAgEHcBNw+AECASpxE3cYAgEicGhwgQECAS9w7AFw9QECAS1wigFwwQECAStxIXEqAgEjcxd1IgIBJXQZdJMCAgEmdLABdMYBAgEodER0pQECASc=</sads:DebugSymbol.Symbol>
+    <sads:DebugSymbol.Symbol>d3RDOlxVc2Vyc1xZb3NoaWhpa28gTWl5YWljaGlcRG9jdW1lbnRzXFVpUGF0aFxSZUZyYW1ld29yay1UZW1wbGF0ZS1NYWlsLVRyYW5zYWN0aW9uXEZyYW1ld29ya1xHZXRUcmFuc2FjdGlvbkRhdGEueGFtbDRTA7MBDgIBAVQFfQoCARx+BZMBCgIBEpQBBbEBCgIBAlQTVC8CAR1WCXsUAgEffhN+TwIBE4ABCYcBEgIBGIoBCZEBEgIBFJQBE5QBOAIBA5YBCa8BFAIBBVwLYiMCAUVjC2OHDAIBQmQLZMwEAgEzZQt6GAIBIIUBO4UBoQECARuCATyCAVECARmPATuPAUQCAReMATyMAVECARWXAQueARQCAQ6fAQumARQCAQqnAQuuARQCAQZgU2BdAgFLX0xfcwIBSV5MXlYCAUdcxAFc5gECAUZjKGM+AgFDZKAEZMkEAgFAZHpkhgECAT5kogNkzAMCATxkpwJkswICATpk7ANkmwQCAThk1wJknAMCATZk2wFkigICATRlnQFlqQECATFrEXccAgEhnAE2nAFEAgERmQE3mQFKAgEPpAE2pAFEAgENoQE3oQFOAgELrAE2rAFEAgEJqQE3qQFOAgEHbxNv+AECASpwE3YYAgEib2hvgQECAS9v7AFv9QECAS1vigFvwQECAStwIXAqAgEjchd0IgIBJXMZc5MCAgEmc7ABc8YBAgEoc0RzpQECASc=</sads:DebugSymbol.Symbol>
   </Sequence>
   <sap2010:WorkflowViewState.ViewStateManager>
     <sap2010:ViewStateManager>
@@ -213,7 +212,7 @@
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
       <sap2010:ViewStateData Id="ForEach`1_1" sap:VirtualizedContainerService.HintSize="502,617" />
-      <sap2010:ViewStateData Id="Sequence_3" sap:VirtualizedContainerService.HintSize="200,52">
+      <sap2010:ViewStateData Id="Sequence_3" sap:VirtualizedContainerService.HintSize="524,1029">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
